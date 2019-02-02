@@ -17,6 +17,7 @@ public class InsuranceCompany extends Organization{
     private int actives; // активы
     private int capitalization; // капитализация
 
+    // constructor for default organization without any parameters
     public InsuranceCompany()
     {
         super.setName("Berkshire Hathaway");
@@ -36,7 +37,7 @@ public class InsuranceCompany extends Organization{
         actives = 702;
         capitalization = 512;
     }
-
+    // constructor for being created organization with with specified parameters
     public InsuranceCompany(String name, String industry, String theFounder, String foundationYear,
                             String shortDescription, String numberOfEmployees, String location, String keyPersons,
                             int clientsQuantity, int officesQuantity,
@@ -54,25 +55,26 @@ public class InsuranceCompany extends Organization{
     @Override
     public void createOrganization() {
         super.createOrganization(); // parent part
-        System.out.println("Quantity of clients: "); // heir part
+        System.out.println("9.Quantity of clients: "); // heir part
         clientsQuantity = console.nextInt();
-        System.out.println("Quantity of offices: ");
+        System.out.println("10.Quantity of offices: ");
         officesQuantity = console.nextInt();
-        System.out.println("Equity of company: ");
+        System.out.println("11.Equity of company: ");
         equity = console.nextInt();
-        System.out.println("Turnover of company: ");
+        System.out.println("12.Turnover of company: ");
         turnover = console.nextInt();
-        System.out.println("Net profit of company: ");
+        System.out.println("13.Net profit of company: ");
         netProfit = console.nextInt();
-        System.out.println("Actives of company: ");
+        System.out.println("14.Actives of company: ");
         actives = console.nextInt();
-        System.out.println("Capitalization of company: ");
+        System.out.println("15.Capitalization of company: ");
         capitalization = console.nextInt();
         insurers.add(new InsuranceCompany(getName(),getIndustry(),getTheFounder(),getFoundationYear(),
                 getShortDescription(),getNumberOfEmployees(),getLocation(),getKeyPersons(),
                 clientsQuantity,officesQuantity,equity,turnover,netProfit,actives,capitalization));
     }
 
+    // outputs the number of created organizations
     @Override
     public int numberOfExistingElements(){
         return insurers.size();

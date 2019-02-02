@@ -17,6 +17,7 @@ public class OilGasCompany extends Organization{
     private double developedReserves; // количество разрабатываемых месторождений
     private double averageSalary; // средняя зарплата
 
+    // constructor for default organization without any parameters
     public OilGasCompany()
     {
         super.setName("British Petroleum");
@@ -38,7 +39,7 @@ public class OilGasCompany extends Organization{
         developedReserves = 39;
         averageSalary = 2130;
     }
-
+    // constructor for being created organization with with specified parameters
     public OilGasCompany(String name, String industry, String theFounder, String foundationYear, String shortDescription,
                          String numberOfEmployees, String location, String keyPersons,
                          int equity, int turnover, int netProfit, int actives, int capitalization,
@@ -56,25 +57,26 @@ public class OilGasCompany extends Organization{
     @Override
     public void createOrganization() {
         super.createOrganization();
-        System.out.println("Average salary in company: "); // heir part
+        System.out.println("9.Average salary in company: "); // heir part
         averageSalary = console.nextInt();
-        System.out.println("Quantity of developed reserves: ");
+        System.out.println("10.Quantity of developed reserves: ");
         developedReserves = console.nextInt();
-        System.out.println("Equity of company: ");
+        System.out.println("11.Equity of company: ");
         equity = console.nextInt();
-        System.out.println("Turnover of company: ");
+        System.out.println("12.Turnover of company: ");
         turnover = console.nextInt();
-        System.out.println("Net profit of company: ");
+        System.out.println("13.Net profit of company: ");
         netProfit = console.nextInt();
-        System.out.println("Actives of company: ");
+        System.out.println("14.Actives of company: ");
         actives = console.nextInt();
-        System.out.println("Capitalization of company: ");
+        System.out.println("15.Capitalization of company: ");
         capitalization = console.nextInt();
         oilers.add(new OilGasCompany(getName(),getIndustry(),getTheFounder(),getFoundationYear(),
                 getShortDescription(),getNumberOfEmployees(),getLocation(),getKeyPersons(),equity,turnover,
                 netProfit,actives,capitalization,developedReserves,averageSalary));
     }
 
+    // outputs the number of created organizations
     @Override
     public int numberOfExistingElements(){
         return oilers.size();

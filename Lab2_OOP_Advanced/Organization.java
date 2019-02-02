@@ -19,6 +19,7 @@ public class Organization implements Operations{
     private String location;
     private String keyPersons;
 
+    // constructor for default organization without any parameters
     public Organization()
     {
         name = "Human Rights Watch";
@@ -31,7 +32,7 @@ public class Organization implements Operations{
         location = "Planet Earth";
         keyPersons = "Kenneth Rhoth[director]";
     }
-
+    // constructor for being created organization with with specified parameters
     public Organization(String name, String industry, String theFounder,
                         String foundationYear, String shortDescription, String numberOfEmployees, String location, String keyPersons){
         this.name = name;
@@ -66,10 +67,12 @@ public class Organization implements Operations{
                 shortDescription,numberOfEmployees,location,keyPersons));
     }
 
+    // outputs the number of created organizations
     @Override
     public int numberOfExistingElements(){
         return organizations.size();
     }
+
 
     public void createDefault() {
         organizations.add(new Organization());
@@ -79,8 +82,6 @@ public class Organization implements Operations{
     public void displayInformation() {
         for (Organization o : organizations) { System.out.println(o);}
     }
-
-
 
     @Override
     public String toString() {
@@ -96,6 +97,7 @@ public class Organization implements Operations{
                 + "\n8.Short description: " + shortDescription + ".";
     }
 
+    //getters-setters part
     public String getName() {
         return name;
     }

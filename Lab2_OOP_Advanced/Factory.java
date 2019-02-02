@@ -12,6 +12,7 @@ public class Factory extends Organization{
     private String netProfit;
     private String production;
 
+    // constructor for default organization without any parameters
     public Factory()
     {
         super.setName("Kharkiv Tractor Plant");
@@ -26,7 +27,7 @@ public class Factory extends Organization{
         netProfit = "-667.000.000";
         production = "tractors, attachments";
     }
-
+    // constructor for being created organization with with specified parameters
     public Factory(String name, String industry, String theFounder, String foundationYear, String shortDescription,
                    String numberOfEmployees, String location, String keyPersons, String production, String netProfit) {
         super(name,industry,theFounder,foundationYear,shortDescription,numberOfEmployees,location,keyPersons);
@@ -37,14 +38,15 @@ public class Factory extends Organization{
     @Override
     public void createOrganization() {
         super.createOrganization(); // parent part input
-        System.out.println("Production list: "); // heir part input
+        System.out.println("9.Production list: "); // heir part input
         production = console.nextLine();
-        System.out.println("NetProfit is: ");
+        System.out.println("10.NetProfit is: ");
         netProfit = console.nextLine();
         factories.add(new Factory(getName(),getIndustry(),getTheFounder(),getFoundationYear(),
                 getShortDescription(),getNumberOfEmployees(),getLocation(),getKeyPersons(),production,netProfit));
     }
 
+    // outputs the number of created organizations
     @Override
     public int numberOfExistingElements(){
         return factories.size();

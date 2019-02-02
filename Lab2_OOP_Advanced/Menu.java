@@ -2,6 +2,7 @@ package CPP.Lab2_OOP_Advanced;
 import java.util.Scanner;
 
 public class Menu {
+    // objects that are needed to call class methods
     private Organization org = new Organization();
     private Factory factory = new Factory();
     private OilGasCompany oilgas = new OilGasCompany();
@@ -10,7 +11,7 @@ public class Menu {
     void manager(Scanner console) {
         boolean wantToContinue = true;
         while(wantToContinue){
-            taskAnnouncer();
+            menuList();
             if(console.hasNextInt()){ // checking for Int variable
                 int selector = console.nextInt(); // variable that takes numeric to choose task
                 switch(selector){
@@ -90,7 +91,8 @@ public class Menu {
         }
     }
 
-    private void taskAnnouncer(){  // output information about which method of solving gonna be used
+    // output information about possibilities of program
+    private void menuList(){
         String StringContent = "\033[0;1m" + "\n-------------------------------------------------------" +
                 "\nSelect from the presented options: \n " +
                 "1: Create an organization.\n " +
