@@ -3,11 +3,6 @@ package CPP.Lab2_OOP_Advanced;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/*
-Parent class.
-Here will be described the entities that are peculiar to all classes of heirs.
- */
-
 public class Organization implements Operations {
     private static ArrayList<Organization> organizations = new ArrayList<>();
     Scanner console = new Scanner(System.in);
