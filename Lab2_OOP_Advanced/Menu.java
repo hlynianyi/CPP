@@ -1,4 +1,5 @@
 package CPP.Lab2_OOP_Advanced;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -10,11 +11,11 @@ public class Menu {
 
     void manager(Scanner console) {
         boolean wantToContinue = true;
-        while(wantToContinue){
+        while (wantToContinue) {
             menuList();
-            if(console.hasNextInt()){ // checking for Int variable
+            if (console.hasNextInt()) { // checking for Int variable
                 int selector = console.nextInt(); // variable that takes numeric to choose task
-                switch(selector){
+                switch (selector) {
                     case 1:
                         whichTypeOfOrganizationCreate(console); // Select which organization you want to create
                         break;
@@ -24,19 +25,21 @@ public class Menu {
                     case 3:
                         System.out.println("Program was closed.");
                         return;
-                    default: System.out.println("This variant is not exist, yet..");
+                    default:
+                        System.out.println("This variant is not exist, yet..");
                 }
+            } else {
+                System.out.println("Unpredictable number or type..");
             }
-            else{ System.out.println("Unpredictable number or type.."); }
         }
     }
 
     // switch-case method that ask user which one organization need to create
-    private void whichTypeOfOrganizationCreate(Scanner console){
+    private void whichTypeOfOrganizationCreate(Scanner console) {
         asksWhatToCreate();
-        if (console.hasNextInt()){
+        if (console.hasNextInt()) {
             int selector = console.nextInt();
-            switch (selector){
+            switch (selector) {
                 case 1:
                     org.createOrganization();
                     break;
@@ -63,11 +66,11 @@ public class Menu {
     }
 
     // switch-case method that ask user which one organization need to display
-    private void whichTypeOfOrganizationShow(Scanner console){
+    private void whichTypeOfOrganizationShow(Scanner console) {
         asksWhatToShow();
-        if (console.hasNextInt()){
+        if (console.hasNextInt()) {
             int selector = console.nextInt();
-            switch (selector){
+            switch (selector) {
                 case 1:
                     org.displayInformation();
                     break;
@@ -92,7 +95,7 @@ public class Menu {
     }
 
     // output information about possibilities of program
-    private void menuList(){
+    private void menuList() {
         String StringContent = "\033[0;1m" + "\n-------------------------------------------------------" +
                 "\nSelect from the presented options: \n " +
                 "1: Create an organization.\n " +
@@ -120,10 +123,10 @@ public class Menu {
                 "\n2: Display factories list{" + factory.numberOfExistingElements() + "}." +
                 "\n3: Display Oil and Gas companies list{" + insurance.numberOfExistingElements() + "}." +
                 "\n4: Display Insurance companies list{" + oilgas.numberOfExistingElements() + "}." +
-                "\n5. Display all that stored list{"+(org.numberOfExistingElements() +
-                factory.numberOfExistingElements()+ insurance.numberOfExistingElements()
+                "\n5. Display all that stored list{" + (org.numberOfExistingElements() +
+                factory.numberOfExistingElements() + insurance.numberOfExistingElements()
                 + oilgas.numberOfExistingElements()) + "}." +
                 "\n6: Back to menu." +
-                "\n-------------------------------------------------------") ;
+                "\n-------------------------------------------------------");
     }
 }

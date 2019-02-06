@@ -1,4 +1,5 @@
 package CPP.Lab2_OOP_Advanced;
+
 import java.util.ArrayList;
 
 /*
@@ -7,14 +8,13 @@ This class will describe elements specific
 to a particular type of organization(Factory).
  */
 
-public class Factory extends Organization{
+public class Factory extends Organization {
     private ArrayList<Factory> factories = new ArrayList<>();
     private String netProfit;
     private String production;
 
     // constructor for default organization without any parameters
-    public Factory()
-    {
+    public Factory() {
         super.setName("Kharkiv Tractor Plant");
         super.setIndustry("Engineering");
         super.setTheFounder("Former Soviet Union");
@@ -27,10 +27,11 @@ public class Factory extends Organization{
         netProfit = "-667.000.000";
         production = "tractors, attachments";
     }
+
     // constructor for being created organization with with specified parameters
     public Factory(String name, String industry, String theFounder, String foundationYear, String shortDescription,
                    String numberOfEmployees, String location, String keyPersons, String production, String netProfit) {
-        super(name,industry,theFounder,foundationYear,shortDescription,numberOfEmployees,location,keyPersons);
+        super(name, industry, theFounder, foundationYear, shortDescription, numberOfEmployees, location, keyPersons);
         this.production = production;
         this.netProfit = netProfit;
     }
@@ -42,13 +43,13 @@ public class Factory extends Organization{
         production = console.nextLine();
         System.out.println("10.NetProfit is: ");
         netProfit = console.nextLine();
-        factories.add(new Factory(getName(),getIndustry(),getTheFounder(),getFoundationYear(),
-                getShortDescription(),getNumberOfEmployees(),getLocation(),getKeyPersons(),production,netProfit));
+        factories.add(new Factory(getName(), getIndustry(), getTheFounder(), getFoundationYear(),
+                getShortDescription(), getNumberOfEmployees(), getLocation(), getKeyPersons(), production, netProfit));
     }
 
     // outputs the number of created organizations
     @Override
-    public int numberOfExistingElements(){
+    public int numberOfExistingElements() {
         return factories.size();
     }
 
@@ -59,13 +60,15 @@ public class Factory extends Organization{
 
     @Override
     public void displayInformation() {
-        for (Factory f : factories) { System.out.println(f);}
+        for (Factory f : factories) {
+            System.out.println(f);
+        }
     }
 
     @Override
     public String toString() {
         return super.toString()
                 + "\n9.Production type: " + production + "."
-                + "\n10.Net profit/loss: " +netProfit + " hrivnas.";
+                + "\n10.Net profit/loss: " + netProfit + " hrivnas.";
     }
 }

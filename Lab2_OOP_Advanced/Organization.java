@@ -1,4 +1,5 @@
 package CPP.Lab2_OOP_Advanced;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,7 +8,7 @@ Parent class.
 Here will be described the entities that are peculiar to all classes of heirs.
  */
 
-public class Organization implements Operations{
+public class Organization implements Operations {
     private static ArrayList<Organization> organizations = new ArrayList<>();
     Scanner console = new Scanner(System.in);
     private String name;
@@ -20,8 +21,7 @@ public class Organization implements Operations{
     private String keyPersons;
 
     // constructor for default organization without any parameters
-    public Organization()
-    {
+    public Organization() {
         name = "Human Rights Watch";
         industry = "None-commercial social organization";
         theFounder = "Robert Bjornstain, Aryeh Neier";
@@ -32,9 +32,10 @@ public class Organization implements Operations{
         location = "Planet Earth";
         keyPersons = "Kenneth Rhoth[director]";
     }
+
     // constructor for being created organization with with specified parameters
     public Organization(String name, String industry, String theFounder,
-                        String foundationYear, String shortDescription, String numberOfEmployees, String location, String keyPersons){
+                        String foundationYear, String shortDescription, String numberOfEmployees, String location, String keyPersons) {
         this.name = name;
         this.industry = industry;
         this.theFounder = theFounder;
@@ -63,13 +64,13 @@ public class Organization implements Operations{
         numberOfEmployees = console.nextLine();
         System.out.println("8.Write description about organization:");
         shortDescription = console.nextLine();
-        organizations.add(new Organization(name,industry,theFounder,foundationYear,
-                shortDescription,numberOfEmployees,location,keyPersons));
+        organizations.add(new Organization(name, industry, theFounder, foundationYear,
+                shortDescription, numberOfEmployees, location, keyPersons));
     }
 
     // outputs the number of created organizations
     @Override
-    public int numberOfExistingElements(){
+    public int numberOfExistingElements() {
         return organizations.size();
     }
 
@@ -80,14 +81,16 @@ public class Organization implements Operations{
 
     @Override
     public void displayInformation() {
-        for (Organization o : organizations) { System.out.println(o);}
+        for (Organization o : organizations) {
+            System.out.println(o);
+        }
     }
 
     @Override
     public String toString() {
         return "-------------------------------------------------------" +
                 "\nThe object belongs to the " + getClass().getSimpleName() + " class"
-                +  "\n1.Name: " + name + "."
+                + "\n1.Name: " + name + "."
                 + "\n2.The industry: " + industry + "."
                 + "\n3.Location: " + location + "."
                 + "\n4.Year of foundation: " + foundationYear + "."

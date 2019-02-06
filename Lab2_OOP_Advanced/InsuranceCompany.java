@@ -1,4 +1,5 @@
 package CPP.Lab2_OOP_Advanced;
+
 import java.util.ArrayList;
 
 /*
@@ -7,7 +8,7 @@ This class will describe elements specific
 to a particular type of organization(Insurance company).
  */
 
-public class InsuranceCompany extends Organization{
+public class InsuranceCompany extends Organization {
     private ArrayList<InsuranceCompany> insurers = new ArrayList<>();
     private int clientsQuantity;
     private int officesQuantity;
@@ -18,8 +19,7 @@ public class InsuranceCompany extends Organization{
     private int capitalization; // капитализация
 
     // constructor for default organization without any parameters
-    public InsuranceCompany()
-    {
+    public InsuranceCompany() {
         super.setName("Berkshire Hathaway");
         super.setTheFounder("Oliver Chace");
         super.setIndustry("insurance, finance, rail transport, utilities, food and non-food products");
@@ -37,6 +37,7 @@ public class InsuranceCompany extends Organization{
         actives = 702;
         capitalization = 512;
     }
+
     // constructor for being created organization with with specified parameters
     public InsuranceCompany(String name, String industry, String theFounder, String foundationYear,
                             String shortDescription, String numberOfEmployees, String location, String keyPersons,
@@ -69,14 +70,14 @@ public class InsuranceCompany extends Organization{
         actives = console.nextInt();
         System.out.println("15.Capitalization of company: ");
         capitalization = console.nextInt();
-        insurers.add(new InsuranceCompany(getName(),getIndustry(),getTheFounder(),getFoundationYear(),
-                getShortDescription(),getNumberOfEmployees(),getLocation(),getKeyPersons(),
-                clientsQuantity,officesQuantity,equity,turnover,netProfit,actives,capitalization));
+        insurers.add(new InsuranceCompany(getName(), getIndustry(), getTheFounder(), getFoundationYear(),
+                getShortDescription(), getNumberOfEmployees(), getLocation(), getKeyPersons(),
+                clientsQuantity, officesQuantity, equity, turnover, netProfit, actives, capitalization));
     }
 
     // outputs the number of created organizations
     @Override
-    public int numberOfExistingElements(){
+    public int numberOfExistingElements() {
         return insurers.size();
     }
 
@@ -87,7 +88,9 @@ public class InsuranceCompany extends Organization{
 
     @Override
     public void displayInformation() {
-        for (InsuranceCompany i : insurers) { System.out.println(i);}
+        for (InsuranceCompany i : insurers) {
+            System.out.println(i);
+        }
     }
 
     @Override

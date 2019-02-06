@@ -1,4 +1,5 @@
 package CPP.Lab2_OOP_Advanced;
+
 import java.util.ArrayList;
 
 /*
@@ -7,7 +8,7 @@ This class will describe elements specific
 to a particular type of organization(Oil and Gas company).
  */
 
-public class OilGasCompany extends Organization{
+public class OilGasCompany extends Organization {
     private ArrayList<OilGasCompany> oilers = new ArrayList<>();
     private int equity; // собственный капитал
     private int turnover; // оборот
@@ -18,8 +19,7 @@ public class OilGasCompany extends Organization{
     private double averageSalary; // средняя зарплата
 
     // constructor for default organization without any parameters
-    public OilGasCompany()
-    {
+    public OilGasCompany() {
         super.setName("British Petroleum");
         super.setTheFounder("William Knox D’Arcy");
         super.setIndustry("Extraction and processing of oil and gas");
@@ -39,6 +39,7 @@ public class OilGasCompany extends Organization{
         developedReserves = 39;
         averageSalary = 2130;
     }
+
     // constructor for being created organization with with specified parameters
     public OilGasCompany(String name, String industry, String theFounder, String foundationYear, String shortDescription,
                          String numberOfEmployees, String location, String keyPersons,
@@ -71,14 +72,14 @@ public class OilGasCompany extends Organization{
         actives = console.nextInt();
         System.out.println("15.Capitalization of company: ");
         capitalization = console.nextInt();
-        oilers.add(new OilGasCompany(getName(),getIndustry(),getTheFounder(),getFoundationYear(),
-                getShortDescription(),getNumberOfEmployees(),getLocation(),getKeyPersons(),equity,turnover,
-                netProfit,actives,capitalization,developedReserves,averageSalary));
+        oilers.add(new OilGasCompany(getName(), getIndustry(), getTheFounder(), getFoundationYear(),
+                getShortDescription(), getNumberOfEmployees(), getLocation(), getKeyPersons(), equity, turnover,
+                netProfit, actives, capitalization, developedReserves, averageSalary));
     }
 
     // outputs the number of created organizations
     @Override
-    public int numberOfExistingElements(){
+    public int numberOfExistingElements() {
         return oilers.size();
     }
 
@@ -89,7 +90,9 @@ public class OilGasCompany extends Organization{
 
     @Override
     public void displayInformation() {
-        for (OilGasCompany og : oilers) { System.out.println(og);}
+        for (OilGasCompany og : oilers) {
+            System.out.println(og);
+        }
     }
 
     @Override
