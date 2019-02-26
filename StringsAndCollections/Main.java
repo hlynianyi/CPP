@@ -3,7 +3,7 @@ package CPP.StringsAndCollections;
 import java.util.Scanner;
 
 /*
-Цель работы: Подсчитать количество символов во всех словах текста.
+Цель работы: Видалити з тексту слова, які містять числа.
 */
 
 public class Main {
